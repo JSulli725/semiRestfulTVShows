@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>All Shows</h1>
+    <div class = "showId">
+        <h4>ID</h4>
+        <ul>
+            {% for show in allShows %}
+                <li>{{ show.id }}</li>
+            {% endfor %}
+            </ul>
+    </div>
+    <div class = "showTitle">
+        <h4>Title</h4>
+        <ul>
+            {% for show in allShows %}
+                <li>{{ show.title }}</li>
+            {% endfor %}
+            </ul>
+    </div>
+    <div class = "showNetwork">
+        <h4>Network</h4>
+        <ul>
+            {% for show in allShows %}
+                <li>{{ show.network }}</li>
+            {% endfor %}
+            </ul>
+    </div>
+    <div class = "showReleaseDate">
+        <h4>Release Date</h4>
+        <ul>
+            {% for show in allShows %}
+                <li>{{ show.releaseDate }}</li>
+            {% endfor %}
+            </ul>
+    </div>
+    <div class = "actions">
+        <h4>Actions</h4>
+            {% for show in allShows %}
+            <a href = "/shows/{{ show.id }}">Show</a>
+            <a href = "/shows/{{ show.id }}/edit">Edit</a>
+            <a href = "/shows/{{ show.id }}/destroy">Delete</a>
+            <br>
+            {% endfor %}
+    </div>
+    <br>
+    <a href="http://localhost:8000/shows/new">Add a New Show</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Edit Show {{ edit_show.id }}</h1>
+    <div class = "editShowContainer">
+        <form action = "/shows/{{ edit_show.id }}/update" method = "POST">
+            {% csrf_token %}
+            Title<br>
+            <input name = "title" type="text" value = "{{ edit_show.title }}">
+            <br>
+            Network<br>
+            <input name = "network" type = "text" value = "{{ edit_show.network }}">
+            <br>
+            Release Date<br>
+            <input name = "releaseDate" type = "date" value = "{{ edit_show.releaseDate }}">
+            <br>
+            Description<br>
+            <input name = "description" type = "text" value = "{{ edit_show.description}}">
+            <br>
+            <button type = "submit">Update</button>
+        </form>
+    </div>
+</body>
+</body>
+</html>
