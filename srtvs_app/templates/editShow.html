@@ -7,6 +7,11 @@
     <title>Document</title>
 </head>
 <body>
+{% if messages %}
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+{% endif %}
     <h1>Edit Show {{ edit_show.id }}</h1>
     <div class = "editShowContainer">
         <form action = "/shows/{{ edit_show.id }}/update" method = "POST">
